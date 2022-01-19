@@ -170,7 +170,7 @@ class AutoSign:
         self.form['signVersion'] = '1.0.0'
 
     # DES加密
-    def DESEncrypt(self, s, key='b3L26XNL'):
+    def DESEncrypt(self, s, key='XCE927=='):
         key = key
         iv = b"\x01\x02\x03\x04\x05\x06\x07\x08"
         k = des(key, CBC, iv, pad=None, padmode=PAD_PKCS5)
@@ -180,7 +180,7 @@ class AutoSign:
     # 提交签到信息
     def submitForm(self):
         model = "RuoLi Phone Plus Pro Max 2021"
-        appVersion = "9.0.12"
+        appVersion = "9.0.14"
         extension = {
             "lon": self.userInfo['lon'],
             "model": model,
@@ -220,7 +220,7 @@ class AutoSign:
         res = res.json()
         if res['status'] != 200:
             raise Exception(res['message'])
-        forSubmit['version'] = 'first_v2'
+        forSubmit['version'] = 'first_v3'
         forSubmit['calVersion'] = 'firstv'
         forSubmit['bodyString'] = res['data']['bodyString']
         forSubmit['sign'] = res['data']['sign']

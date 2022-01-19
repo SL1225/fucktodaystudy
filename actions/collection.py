@@ -233,7 +233,7 @@ class Collection:
     # 提交表单
     def submitForm(self):
         model = "RuoLi Phone Plus Pro Max 2021"
-        appVersion = "9.0.12"
+        appVersion = "9.0.14"
         extension = {
             "model": model,
             "appVersion": appVersion,
@@ -281,7 +281,7 @@ class Collection:
         res = res.json()
         if res['status'] != 200:
             raise Exception(res['message'])
-        forSubmit['version'] = 'first_v2'
+        forSubmit['version'] = 'first_v3'
         forSubmit['calVersion'] = 'firstv'
         forSubmit['bodyString'] = res['data']['bodyString']
         forSubmit['sign'] = res['data']['sign']
@@ -293,7 +293,7 @@ class Collection:
 
     # DES加密
     def DESEncrypt(self, content):
-        key = 'b3L26XNL'
+        key = 'XCE927=='
         iv = b"\x01\x02\x03\x04\x05\x06\x07\x08"
         k = des(key, CBC, iv, pad=None, padmode=PAD_PKCS5)
         encrypt_str = k.encrypt(content)
