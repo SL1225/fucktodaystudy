@@ -62,7 +62,7 @@ class RlMessage:
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0'
         }
-        res = requests.post("http://www.pushplus.plus/send", headers=headers, params=params)
+        res = requests.post("http://www.pushplus.plus/send?token=", headers=headers, params=params)
         if res.status_code == 200:
             return "发送成功"
         else:
